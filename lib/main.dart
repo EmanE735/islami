@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/app_theme.dart';
 import 'package:islami/home_screen.dart';
+import 'package:islami/quran/sura_content_screen.dart';
 
 
 void main() => runApp(IslamiApp());
@@ -15,6 +16,7 @@ class IslamiApp extends StatelessWidget {
     
       routes: {
         HomeScreen.routeName:(_) => HomeScreen(),
+        SuraContentScreen.routeName:(_)=>SuraContentScreen(),
       },
       initialRoute:HomeScreen.routeName ,
       theme: AppTheme.lighttheme,

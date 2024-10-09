@@ -23,6 +23,19 @@ class AppTheme{
     backgroundColor: lightprimary,
     selectedItemColor: black,
     unselectedItemColor: white
+    ),
+    textTheme: TextTheme(
+      headlineSmall: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w400,
+        color: black
+      ),
+      titleLarge: TextStyle(
+          fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: black
+
+      )
     )
   );
   static ThemeData darktheme = ThemeData(
