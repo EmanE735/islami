@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:islami/app_theme.dart';
-import 'package:islami/quran/quran_tab.dart';
+import 'package:islami/hadeth/hadeth.dart';
+
 
 // ignore: must_be_immutable
-class SuraContentScreen extends StatefulWidget {
+class HadethContentScreen extends StatefulWidget {
   //const SuraContentScreen({super.key});
 
  
-  static const String routeName = '/sura-content';
+  static const String routeName = '/hadeth-content';
 
   @override
-  State<SuraContentScreen> createState() => _SuraContentScreenState();
+  State<HadethContentScreen> createState() => _SuraContentScreenState();
 }
 
 
-class _SuraContentScreenState extends State<SuraContentScreen> {
-   String surahContent="";
+class _SuraContentScreenState extends State<HadethContentScreen> {
+   String hadethContent="";
   @override
  
   Widget build(BuildContext context) {
    
 
-   SurahContentArgs args= ModalRoute.of(context)!.settings.arguments as SurahContentArgs;
-    loadSurahContent(args.fileName);
+   Hadeth args= ModalRoute.of(context)!.settings.arguments as Hadeth;
+   
     return 
      Container(
          decoration: BoxDecoration(
@@ -49,20 +50,17 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
             ),
             child: Column(
               children:[ 
-                Text(args.surahName, style: Theme.of(context).textTheme.titleLarge,),
+                Text(args.title, style: Theme.of(context).textTheme.titleLarge,),
                 Divider(thickness: 2,color:Theme.of(context).primaryColor , ),
                 Expanded(
                   child: ListView.builder(itemBuilder:(_,index)=> 
-                                surahContent.isEmpty? Center(child:  CircularProgressIndicator(
-                                    backgroundColor: Theme.of(context).primaryColor,
-                                    color:Theme.of(context).primaryColor 
-                                )):
+                                
                                 Text(
-                                 surahContent,
+                                 args.content[index],
                   style: Theme.of(context).textTheme.titleLarge,
                   textAlign: TextAlign.center,
                                 ),
-                                itemCount: 1,
+                                itemCount: args.content.length,
                                 ),
                 ),
               ]
@@ -76,13 +74,7 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
     
     
   }
- Future <void> loadSurahContent (String fileName)async{
-  surahContent = await rootBundle.loadString("assets/text/$fileName");
-  surahContent.split("/r/n");
-  setState(() {
-    
-  });
-  }
+
 
 
 }
