@@ -3,7 +3,9 @@ import 'package:islami/hadeth/hadith_tab.dart';
 import 'package:islami/quran/quran_tab.dart';
 import 'package:islami/radio/radio_tab.dart';
 import 'package:islami/sebha/sebha_tab.dart';
+import 'package:islami/settings/setting_provider.dart';
 import 'package:islami/settings/settings_tab.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   
@@ -28,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/bg3.png"),
+          image: AssetImage("assets/images/${Provider.of<SettingsProvider>(context).backgroundImageName}.png"),
           fit: BoxFit.fill
           )
       ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/app_theme.dart';
 import 'package:islami/quran/quran_tab.dart';
+import 'package:islami/settings/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class SuraContentScreen extends StatefulWidget {
@@ -20,6 +22,7 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
   @override
  
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
    
 
    SurahContentArgs args= ModalRoute.of(context)!.settings.arguments as SurahContentArgs;
@@ -28,7 +31,7 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
      Container(
          decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/bg3.png"),
+            image: AssetImage("assets/images/${settingsProvider.backgroundImageName}.png"),
             fit: BoxFit.fill
             )
         ),
@@ -44,7 +47,7 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
               horizontal: 24,
             ),
             decoration: BoxDecoration(
-              color: AppTheme.white,
+              color: settingsProvider.isDark ? AppTheme.darkprimary: AppTheme.white,
               borderRadius: BorderRadius.circular(25)
             ),
             child: Column(
