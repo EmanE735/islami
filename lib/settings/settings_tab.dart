@@ -3,6 +3,7 @@ import 'package:islami/app_theme.dart';
 import 'package:islami/settings/language.dart';
 import 'package:islami/settings/setting_provider.dart';
 import 'package:provider/provider.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsTab extends StatefulWidget {
   const SettingsTab({super.key});
@@ -21,6 +22,7 @@ class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
     SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -39,6 +41,8 @@ class _SettingsTabState extends State<SettingsTab> {
                  // activeColor:Theme.of(context).primaryColor,
                   onChanged: (isdark) {
                     settingsProvider.changeTheme(isdark ? ThemeMode.dark: ThemeMode.light);
+                   // settingsProvider.getTheme();
+                    //SharedPreferences.getInstance();
                   },
                   activeTrackColor: AppTheme.gold,
                  // thumbColor: ,
@@ -71,6 +75,7 @@ class _SettingsTabState extends State<SettingsTab> {
                  onChanged: (selectedLanguage){
                   if(selectedLanguage != null){
                     settingsProvider.changeLanguage(selectedLanguage.code);
+                    settingsProvider.getLanguage();
                   }
                 
                  },
