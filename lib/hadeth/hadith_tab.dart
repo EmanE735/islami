@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/app_theme.dart';
+import 'package:islami/generated/l10n.dart';
 
 import 'package:islami/hadeth/hadeth.dart';
 import 'package:islami/hadeth/hadeth_content_screen.dart';
+import 'package:islami/settings/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadethTab extends StatefulWidget {
  
@@ -19,6 +23,7 @@ class _HadethTabState extends State<HadethTab> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
    if(ahadeth.isEmpty){
      loadHadethFile();
    }
@@ -27,14 +32,14 @@ class _HadethTabState extends State<HadethTab> {
         Image.asset("assets/images/hadith_header-1.png"),
          Divider(
                 thickness: 4.0,
-                color: Theme.of(context).primaryColor,
+                color:settingsProvider.isDark ? AppTheme.gold: AppTheme.lightprimary,
               ),
-              Text("الاحاديث",
+              Text(S.of(context).hadiths,
                 style: Theme.of(context).textTheme.headlineSmall
               ),
                 Divider(
                 thickness: 4.0,
-                color: Theme.of(context).primaryColor,
+                color:settingsProvider.isDark ? AppTheme.gold: AppTheme.lightprimary,
               ),
               Expanded(
                 child:

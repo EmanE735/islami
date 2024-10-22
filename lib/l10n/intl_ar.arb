@@ -4,7 +4,15 @@
     "hadeth":"حديث",
     "sebha":"سبحه",
     "radio":"راديو",
-    "settings":"الاعدادات"
+    "settings":"الاعدادات",
+    "hadiths":"الاحاديث",
+    "suraName":"اسم السوره ",
+    "verses":"عدد الايات",
+    "darktheme":"الوضع المظلم",
+    "lighttheme":"الوضع المرئي",
+    "language":"اللغه",
+    "praises":"عدد التسبيحات",
+    "holyQuranRadio":"اذاعة القران الكريم"
     
     
   }

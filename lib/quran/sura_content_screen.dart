@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/app_theme.dart';
+import 'package:islami/generated/l10n.dart';
 import 'package:islami/quran/quran_tab.dart';
 import 'package:islami/settings/setting_provider.dart';
 import 'package:provider/provider.dart';
@@ -37,8 +38,8 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
         ),
         child: Scaffold(
           appBar: AppBar(
-            title: Text("اسلامي"), 
-          ),
+            title: Text(S.of(context).islami)), 
+          
           body: Container(
            
             padding: EdgeInsets.all(24),
@@ -53,7 +54,10 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
             child: Column(
               children:[ 
                 Text(args.surahName, style: Theme.of(context).textTheme.titleLarge,),
-                Divider(thickness: 2,color:Theme.of(context).primaryColor , ),
+                 Divider(
+                thickness: 2.0,
+                color:  settingsProvider.isDark ? AppTheme.gold: AppTheme.lightprimary,
+              ), 
                 Expanded(
                   child: ListView.builder(itemBuilder:(_,index)=> 
                                 surahContent.isEmpty? Center(child:  CircularProgressIndicator(

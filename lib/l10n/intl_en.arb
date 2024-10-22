@@ -4,7 +4,17 @@
     "hadeth":"Hadeth",
     "sebha":"Sebha",
     "radio":"Radio",
-    "settings":"Settings"
+    "settings":"Settings",
+    "hadiths":"Hadithes",
+    "suraName":"SuraName",
+    "verses":"Verses",
+    "darktheme":"DarkTheme",
+    "lighttheme":"LightTheme",
+    "language":"Language",
+    "praises":"Number Of praises",
+    "holyQuranRadio":"Holy Quran Radio"
+
+
     
     
   }

@@ -22,11 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "darktheme": MessageLookupByLibrary.simpleMessage("DarkTheme"),
         "hadeth": MessageLookupByLibrary.simpleMessage("Hadeth"),
+        "hadiths": MessageLookupByLibrary.simpleMessage("Hadithes"),
+        "holyQuranRadio":
+            MessageLookupByLibrary.simpleMessage("Holy Quran Radio"),
         "islami": MessageLookupByLibrary.simpleMessage("Islami"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "lighttheme": MessageLookupByLibrary.simpleMessage("LightTheme"),
+        "praises": MessageLookupByLibrary.simpleMessage("Number Of praises"),
         "quran": MessageLookupByLibrary.simpleMessage("Quran"),
         "radio": MessageLookupByLibrary.simpleMessage("Radio"),
         "sebha": MessageLookupByLibrary.simpleMessage("Sebha"),
-        "settings": MessageLookupByLibrary.simpleMessage("Settings")
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "suraName": MessageLookupByLibrary.simpleMessage("SuraName"),
+        "verses": MessageLookupByLibrary.simpleMessage("Verses")
       };
 }

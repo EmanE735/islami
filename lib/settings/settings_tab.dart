@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/app_theme.dart';
+import 'package:islami/generated/l10n.dart';
 import 'package:islami/settings/language.dart';
 import 'package:islami/settings/setting_provider.dart';
 import 'package:provider/provider.dart';
@@ -27,13 +28,15 @@ class _SettingsTabState extends State<SettingsTab> {
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
+          SizedBox(height:MediaQuery.of(context).size.height*.1),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "dark mode",
+                S.of(context).darktheme,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w500,
+                    color: settingsProvider.isDark ? AppTheme.white: AppTheme.black,
                     ),
               ),
               Switch(
@@ -54,9 +57,10 @@ class _SettingsTabState extends State<SettingsTab> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "language",
+                 S.of(context).language,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w500,
+                      color: settingsProvider.isDark ? AppTheme.white: AppTheme.black,
                     ),
               ),
               DropdownButtonHideUnderline(
@@ -69,7 +73,9 @@ class _SettingsTabState extends State<SettingsTab> {
                 DropdownMenuItem(
                   value: language,
                   child: Text(language.name,
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(color:
+                  settingsProvider.isDark ? AppTheme.gold: AppTheme.black,
+                  ),
                   ))
                  ).toList() ,
                  onChanged: (selectedLanguage){
@@ -80,7 +86,7 @@ class _SettingsTabState extends State<SettingsTab> {
                 
                  },
                  borderRadius: BorderRadius.circular(20),
-                 dropdownColor: settingsProvider.isDark ? AppTheme.darkprimary : AppTheme.white,
+                 dropdownColor: settingsProvider.isDark ? AppTheme.white : AppTheme.white,
 
                  ),
               )

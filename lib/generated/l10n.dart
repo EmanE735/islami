@@ -109,6 +109,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Hadithes`
+  String get hadiths {
+    return Intl.message(
+      'Hadithes',
+      name: 'hadiths',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SuraName`
+  String get suraName {
+    return Intl.message(
+      'SuraName',
+      name: 'suraName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verses`
+  String get verses {
+    return Intl.message(
+      'Verses',
+      name: 'verses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DarkTheme`
+  String get darktheme {
+    return Intl.message(
+      'DarkTheme',
+      name: 'darktheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LightTheme`
+  String get lighttheme {
+    return Intl.message(
+      'LightTheme',
+      name: 'lighttheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number Of praises`
+  String get praises {
+    return Intl.message(
+      'Number Of praises',
+      name: 'praises',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Holy Quran Radio`
+  String get holyQuranRadio {
+    return Intl.message(
+      'Holy Quran Radio',
+      name: 'holyQuranRadio',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -4,6 +4,7 @@ import 'package:islami/app_theme.dart';
 import 'package:islami/hadeth/hadeth.dart';
 import 'package:islami/settings/setting_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:islami/generated/l10n.dart';
 
 
 // ignore: must_be_immutable
@@ -38,7 +39,7 @@ class _SuraContentScreenState extends State<HadethContentScreen> {
         ),
         child: Scaffold(
           appBar: AppBar(
-            title: Text("اسلامي"), 
+            title: Text( S.of(context).islami,), 
           ),
           body: Container(
            
@@ -54,7 +55,10 @@ class _SuraContentScreenState extends State<HadethContentScreen> {
             child: Column(
               children:[ 
                 Text(args.title, style: Theme.of(context).textTheme.titleLarge,),
-                Divider(thickness: 2,color:Theme.of(context).primaryColor , ),
+                  Divider(
+                thickness: 2.0,
+                color:  settingsProvider.isDark ? AppTheme.gold: AppTheme.lightprimary,
+              ), 
                 Expanded(
                   child: ListView.builder(itemBuilder:(_,index)=> 
                                 
