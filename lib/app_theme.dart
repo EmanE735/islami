@@ -39,6 +39,36 @@ class AppTheme{
     )
   );
   static ThemeData darktheme = ThemeData(
-    primaryColor: darkprimary
+     appBarTheme: AppBarTheme(
+      centerTitle: true,
+      backgroundColor:Colors.transparent ,
+      foregroundColor: white,
+      titleTextStyle: TextStyle(
+        fontSize:30.0 ,
+        color: white,
+        fontWeight:FontWeight.bold 
+      )
+    ),
+    scaffoldBackgroundColor: Colors.transparent,
+    primaryColor: darkprimary,
+   bottomNavigationBarTheme:BottomNavigationBarThemeData (
+    type: BottomNavigationBarType.fixed,
+    backgroundColor:darkprimary ,
+    selectedItemColor: gold,
+    unselectedItemColor: white
+    ),
+    textTheme: TextTheme(
+      headlineSmall: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w400,
+        color: white
+      ),
+      titleLarge: TextStyle(
+          fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: gold
+
+      )
+    )
   );
 }

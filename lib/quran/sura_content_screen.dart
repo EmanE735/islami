@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/app_theme.dart';
+import 'package:islami/generated/l10n.dart';
 import 'package:islami/quran/quran_tab.dart';
+import 'package:islami/settings/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class SuraContentScreen extends StatefulWidget {
@@ -20,6 +23,7 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
   @override
  
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
    
 
    SurahContentArgs args= ModalRoute.of(context)!.settings.arguments as SurahContentArgs;
@@ -28,14 +32,14 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
      Container(
          decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/bg3.png"),
+            image: AssetImage("assets/images/${settingsProvider.backgroundImageName}.png"),
             fit: BoxFit.fill
             )
         ),
         child: Scaffold(
           appBar: AppBar(
-            title: Text("اسلامي"), 
-          ),
+            title: Text(S.of(context).islami)), 
+          
           body: Container(
            
             padding: EdgeInsets.all(24),
@@ -44,13 +48,16 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
               horizontal: 24,
             ),
             decoration: BoxDecoration(
-              color: AppTheme.white,
+              color: settingsProvider.isDark ? AppTheme.darkprimary: AppTheme.white,
               borderRadius: BorderRadius.circular(25)
             ),
             child: Column(
               children:[ 
                 Text(args.surahName, style: Theme.of(context).textTheme.titleLarge,),
-                Divider(thickness: 2,color:Theme.of(context).primaryColor , ),
+                 Divider(
+                thickness: 2.0,
+                color:  settingsProvider.isDark ? AppTheme.gold: AppTheme.lightprimary,
+              ), 
                 Expanded(
                   child: ListView.builder(itemBuilder:(_,index)=> 
                                 surahContent.isEmpty? Center(child:  CircularProgressIndicator(

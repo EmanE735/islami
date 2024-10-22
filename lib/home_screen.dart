@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:islami/generated/l10n.dart';
 import 'package:islami/hadeth/hadith_tab.dart';
 import 'package:islami/quran/quran_tab.dart';
 import 'package:islami/radio/radio_tab.dart';
 import 'package:islami/sebha/sebha_tab.dart';
+import 'package:islami/settings/setting_provider.dart';
 import 'package:islami/settings/settings_tab.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   
@@ -28,13 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/bg3.png"),
+          image: AssetImage("assets/images/${Provider.of<SettingsProvider>(context).backgroundImageName}.png"),
           fit: BoxFit.fill
           )
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("اسلامي"),
+          title: Text(S.of(context).islami),
         ),
         body: tabs[currentindex],
         bottomNavigationBar: BottomNavigationBar(
@@ -53,26 +56,26 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
           icon: ImageIcon(AssetImage("assets/images/quran.png")
           ),
-          label: "quran",
+          label: (S.of(context).quran),
           ),
              BottomNavigationBarItem(
           icon: ImageIcon(AssetImage("assets/images/quransvg.png")
           ),
-          label: "hadeth",
+          label:  (S.of(context).hadeth),
           ),
              BottomNavigationBarItem(
           icon: ImageIcon(AssetImage("assets/images/sebha.png")
           ),
-          label: "sebha",
+          label: (S.of(context).sebha),
           ),
                BottomNavigationBarItem(
           icon: ImageIcon(AssetImage("assets/images/radio.png")
           ),
-          label: "radio",
+          label:  (S.of(context).radio),
           ),
                   BottomNavigationBarItem(
           icon: Icon(Icons.settings_outlined),
-          label: "settings",
+          label:  (S.of(context).settings),
           ),
          
           

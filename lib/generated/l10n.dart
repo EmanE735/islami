@@ -49,6 +49,149 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+<<<<<<< HEAD
+=======
+
+  /// `Islami`
+  String get islami {
+    return Intl.message(
+      'Islami',
+      name: 'islami',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quran`
+  String get quran {
+    return Intl.message(
+      'Quran',
+      name: 'quran',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hadeth`
+  String get hadeth {
+    return Intl.message(
+      'Hadeth',
+      name: 'hadeth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sebha`
+  String get sebha {
+    return Intl.message(
+      'Sebha',
+      name: 'sebha',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Radio`
+  String get radio {
+    return Intl.message(
+      'Radio',
+      name: 'radio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hadithes`
+  String get hadiths {
+    return Intl.message(
+      'Hadithes',
+      name: 'hadiths',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SuraName`
+  String get suraName {
+    return Intl.message(
+      'SuraName',
+      name: 'suraName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verses`
+  String get verses {
+    return Intl.message(
+      'Verses',
+      name: 'verses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DarkTheme`
+  String get darktheme {
+    return Intl.message(
+      'DarkTheme',
+      name: 'darktheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LightTheme`
+  String get lighttheme {
+    return Intl.message(
+      'LightTheme',
+      name: 'lighttheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number Of praises`
+  String get praises {
+    return Intl.message(
+      'Number Of praises',
+      name: 'praises',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Holy Quran Radio`
+  String get holyQuranRadio {
+    return Intl.message(
+      'Holy Quran Radio',
+      name: 'holyQuranRadio',
+      desc: '',
+      args: [],
+    );
+  }
+>>>>>>> feature/settings
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +200,10 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+<<<<<<< HEAD
+=======
+      Locale.fromSubtags(languageCode: 'ar'),
+>>>>>>> feature/settings
     ];
   }
 

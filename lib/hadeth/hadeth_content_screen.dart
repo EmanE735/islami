@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:islami/app_theme.dart';
 import 'package:islami/hadeth/hadeth.dart';
+import 'package:islami/settings/setting_provider.dart';
+import 'package:provider/provider.dart';
+import 'package:islami/generated/l10n.dart';
 
 
 // ignore: must_be_immutable
@@ -21,6 +24,7 @@ class _SuraContentScreenState extends State<HadethContentScreen> {
   @override
  
   Widget build(BuildContext context) {
+     SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
    
 
    Hadeth args= ModalRoute.of(context)!.settings.arguments as Hadeth;
@@ -29,13 +33,13 @@ class _SuraContentScreenState extends State<HadethContentScreen> {
      Container(
          decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/bg3.png"),
+            image: AssetImage("assets/images/${settingsProvider.backgroundImageName}.png"),
             fit: BoxFit.fill
             )
         ),
         child: Scaffold(
           appBar: AppBar(
-            title: Text("اسلامي"), 
+            title: Text( S.of(context).islami,), 
           ),
           body: Container(
            
@@ -45,13 +49,16 @@ class _SuraContentScreenState extends State<HadethContentScreen> {
               horizontal: 24,
             ),
             decoration: BoxDecoration(
-              color: AppTheme.white,
+                color: settingsProvider.isDark ? AppTheme.darkprimary: AppTheme.white,
               borderRadius: BorderRadius.circular(25)
             ),
             child: Column(
               children:[ 
                 Text(args.title, style: Theme.of(context).textTheme.titleLarge,),
-                Divider(thickness: 2,color:Theme.of(context).primaryColor , ),
+                  Divider(
+                thickness: 2.0,
+                color:  settingsProvider.isDark ? AppTheme.gold: AppTheme.lightprimary,
+              ), 
                 Expanded(
                   child: ListView.builder(itemBuilder:(_,index)=> 
                                 
